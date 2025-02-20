@@ -1,0 +1,31 @@
+.Logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 20px;
+  animation: logo 2s ease-in-out;
+}
+
+.Logo :nth-child(1) {
+  color: #7e57c2;
+}
+
+.Logo :nth-child(3) {
+  color: #ff3d00;
+}
+
+@keyframes logo {
+  0% {
+    transform: scale(3) translateY(50px);
+    opacity: 0;
+  }
+  40% {
+    transform: scale(3) translateY(50px);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}

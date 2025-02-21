@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import "../styles/RecommendationForm.css";
 
-const RecommendationForm = ({ onSearch }) => {
+const RecommendationForm = ({ onSearch, userId }) => {
   const [title, setTitle] = useState("");
   const [genres, setGenres] = useState("");
   const [authors, setAuthors] = useState("");
@@ -11,6 +11,7 @@ const RecommendationForm = ({ onSearch }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     onSearch({
+      userId,
       title: title.trim(), 
       genres: genres.trim(),
       authors: authors.trim(),

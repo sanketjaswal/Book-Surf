@@ -20,4 +20,22 @@ export const getBooks = async (req, res) => {
   }
 };
 
-// export default { addBook, getBooks };
+export const addReview = async (req, res) => {
+  try {
+    const { userId, username, review, rating } = req.body;
+    const bookId = req.params.id;
+
+    const book = await Book.findById(bookId);
+    if (!book) return res.status(404).json({ message: "Book not found" });
+
+    book.reviews.push({ userId, username, review, rating });
+
+    const totalRatings = book.reviews.reduce((sum, r) => sum + r.rating, 0);
+    book.rating = totalRatings / book.reviews.length;
+
+    await book.save();
+    res.status(200).json({ message: "Review added successfully", book });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};

@@ -1,0 +1,45 @@
+.user-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #f9f9f9;
+  opacity: 0;
+  transform: scale(0.5);
+  animation: search 1s ease-in-out 1s forwards;
+}
+
+.user-form h2 {
+  text-align: center;
+}
+
+.user-form input,
+.user-form select {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.user-form .genre-select {
+  height: 100px;
+}
+
+.user-form button {
+  padding: 10px;
+  font-size: 18px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.user-form button:hover {
+  background: #0056b3;
+}

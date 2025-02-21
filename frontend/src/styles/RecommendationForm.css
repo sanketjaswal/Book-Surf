@@ -12,6 +12,10 @@ h1 {
   font-size: 28px;
   color: #333;
   margin-bottom: 20px;
+  opacity: 0;
+  transform: scale(0.5);
+  animation: search 1s ease-in-out 2s forwards;
+
 }
 
 .form {
@@ -26,6 +30,10 @@ h1 {
   border: 1px solid #ccc;
   transition: 0.2s;
   box-shadow: 0 0 7px rgba(0, 0, 0, 0.592);
+  opacity: 0;
+  transform: scale(0.5);
+  animation: search 1s ease-in-out 1s forwards;
+
 }
 
 .form:hover {
@@ -86,4 +94,27 @@ h1 {
 
 .form button:active {
   background-color: #ff3d00;
+}
+
+
+@keyframes search {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }

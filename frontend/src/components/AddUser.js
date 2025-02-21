@@ -1,6 +1,6 @@
 import { useState } from "react";
-import axios from "axios";
 import "../styles/AddUser.css";
+import { addPreferences } from "../api/api";
 
 const AddUser = ({ onUserAdded }) => {
   const [username, setUsername] = useState("");
@@ -29,10 +29,7 @@ const AddUser = ({ onUserAdded }) => {
     };
 
     try {
-      const response = await axios.post(
-        "http://localhost:5000/users/preferences",
-        userData
-      );
+      const response = addPreferences(userData);
       alert("User added successfully!");
       onUserAdded(response.data);
       setUsername("");

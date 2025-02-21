@@ -1,6 +1,9 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5000"; 
+// const API_URL = "http://localhost:5000"; 
+const API_URL = "https://book-recommeder-backend.onrender.com"; 
+
+
 
 export const getRecommendations = async (preferences) => {
   const response = await axios.post(`${API_URL}/recommendations`, preferences);
@@ -13,4 +16,12 @@ export const getBooks = async () => {
   return response.data;
 };
 
-// export const 
+export const addPreferences = async (userData) => {
+  try {
+    const response = await axios.post(`${API_URL}/users/preferences`, userData);
+    return response.data;
+  } catch (error) {
+    console.error("Error adding user:", error);
+    return null;
+  }
+}

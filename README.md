@@ -6,7 +6,7 @@ The Personalized Book Recommendation Web Application is a full-stack web applica
 
 ## Application Link
 
-[https://book-recommendation-backend-4w4g.onrender.com/](https://book-recommendation-backend-4w4g.onrender.com/)
+[https://book-surf.onrender.com/](https://book-surf.onrender.com/)
 
 ## Features
 
